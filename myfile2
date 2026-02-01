@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Surprise ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+  color: #e91e63;
+  font-size: 24px;
+}
+
+.buttons {
+  margin-top: 25px;
+  position: relative;
+  height: 120px;
+}
+
+button {
+  padding: 12px 22px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#yes {
+  background-color: #e91e63;
+  color: white;
+}
+
+#no {
+  background-color: #ddd;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Will you be my Valentine? 💖</h1>
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">Yes 😍</button>
+    <button id="no" ontouchstart="moveNo()" onmouseover="moveNo()">No 🙃</button>
+  </div>
+</div>
+
+<script>
+function yesClicked() {
+  document.body.innerHTML = `
+    <div style="
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      background:linear-gradient(135deg,#ff758c,#ff7eb3);
+      color:white;
+      font-family:Arial;
+      padding:20px;">
+      <h1>
+        Yayyy! 💕🥰<br><br>
+        You just made my day ❤️<br>
+        Happy Valentine’s Day 🌹
+      </h1>
+    </div>
+  `;
+}
+
+function moveNo() {
+  const noBtn = document.getElementById("no");
+  const x = Math.random() * 60;
+  const y = Math.random() * 60;
+  noBtn.style.left = x + "%";
+  noBtn.style.top = y + "%";
+}
+</script>
+
+</body>
+</html>
